@@ -1,0 +1,57 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[left=1.00cm, right=1.00cm, top=1.00cm, bottom=2.00cm]{geometry}
+%opening
+\title{High Performance Computing Homework 8}
+\author{Alejandra Torres Manotas}
+
+\begin{document}
+
+\maketitle
+
+\section{Explanation of files}
+
+\begin{itemize}
+	\item[1.] In the point (b) we had to modify the code such that it stops when there are no more robots on the table, and it takes a command line argument which is the random seed. For this, it is necessary to run the file \textit{serial.cpp} with the instruction wrote at the end of the file. 
+	
+	And for the part (c) we have to write a script to be able to run four different initial conditions at the same time using GNU Parallel. For this, it is necessary to run first the script \textit{script.sh}
+	
+	\item[2.] In part (d), I speeded up the code using OpenMP, using default(none) in the file called \textit{serialOMP.cpp}. And in the part (e) I wrote a job script, called \textit{scriptOMP.sh}, to perform a scaling analysis, that runs the code for values of $OMP\_NUM\_THREADS$
+	ranging from 1 to 4.
+	
+	\item[3.] Finally, in the part (f) I made a plot of the scaling (See Figure \ref{scalling}) and estimate the serial fraction (See Table \ref{table})
+	\begin{equation*}
+		f=\dfrac{T_s}{T_s+NT_1},
+	\end{equation*}
+	where $T_s$ denotes the time spent in the serial part of the computation, $N$ is the number of threads and $T_1$ is time
+	each thread takes to run. Thus $NT_1 = T_P$ denotes the time spent in the parallelizable part of the computation.
+	
+	\begin{figure}
+		\centering\includegraphics[scale=1]{Scaling}
+		\label{scalling}
+		\caption{Scalling Plot of \textit{serialOMP.cpp}}
+	\end{figure}
+ 	In the picture I showed the threat time diminution when the number of threats is increasing.
+ 	
+ 	 \begin{table}[h!]
+ 	 	\centering
+ 	 	\begin{tabular}{||c c c c||} 
+ 	 		\hline
+ 	 		Threats & Parallet Time & Threat Time & Serial Faction \\ [0.5ex] 
+ 	 		\hline\hline
+ 	 		1 &  0m7.461s  &    1.86525    &0.7467757263100734 \\ 
+ 	 		2 & 0m6.151s  &    2.05033   & 0.7815230517866023 \\
+ 	 		3 & 0m5.362s   &   2.681   &   0.8040562762653023 \\
+ 	 		4 &0m8.334s    &  8.334    &  0.725285954445067 \\[1ex] 
+ 	 		\hline
+ 	 	\end{tabular}
+  	\label{table}
+  	\caption{Time measure and Serial Fraction calculation.}
+ 	 \end{table}
+\end{itemize}
+
+\end{document}
