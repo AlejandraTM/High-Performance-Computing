@@ -1,0 +1,59 @@
+http://ppa.launchpad.net/blahota/texstudio/ubuntu bionic Release 
+http://ppa.launchpad.net/compiz/ppa/ubuntu bionic Release
+
+Next steps:
+- Install the Linuxbrew dependencies if you have sudo access:
+  Debian, Ubuntu, etc.
+    sudo apt-get install build-essential
+  Fedora, Red Hat, CentOS, etc.
+    sudo yum groupinstall 'Development Tools'
+  See http://linuxbrew.sh/#dependencies for more information.
+- Add Linuxbrew to your ~/.bash_profile by running
+    echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+    echo 'export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"' >>~/.bash_profile
+    echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"' >>~/.bash_profile
+- Add Linuxbrew to your PATH
+    PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+- We recommend that you install GCC by running:
+    brew install gcc
+- Run `brew help` to get started
+- Further documentation: 
+    http://docs.brew.sh
+
+  echo 'export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/isl@0.18/lib"'
+  echo 'export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/isl@0.18/include"'
+.........................................................................
+Fedora, Red Hat, CentOS, etc.
+    sudo yum groupinstall 'Development Tools'
+  See http://linuxbrew.sh/#dependencies for more information.
+- Configure Linuxbrew in your ~/.profile by running
+    echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile
+- Add Linuxbrew to your PATH
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+- We recommend that you install GCC by running:
+    brew install gcc
+- Run `brew help` to get started
+- Further documentation: 
+    https://docs.brew.sh
+
+..........................................Brew omp conflictes..........
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /home/linuxbrew/.linuxbrew
+Could not symlink lib/libgomp.a
+Target /home/linuxbrew/.linuxbrew/lib/libgomp.a
+is a symlink belonging to gcc. You can unlink it:
+  brew unlink gcc
+
+To force the link and overwrite all conflicting files:
+  brew link --overwrite libomp
+
+To list all files that would be deleted:
+  brew link --overwrite --dry-run libomp
+
+................Open MPI.................
+
+echo 'export PATH="$PATH:/home/$/home/AlejandraTManotas
+.openmpi/bin"' | tee -a /home/$/home/AlejandraTManotas
+.bashrc
+
+

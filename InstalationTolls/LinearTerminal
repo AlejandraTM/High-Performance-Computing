@@ -1,0 +1,56 @@
+
+....Profile....
+
+kernprof -l script_to_profile.py
+python -m line_profiler script_to_profile.py.lprof
+
+python -m memory_profiler example.py
+
+or
+
+from memory_profiler import profile
+
+.....Gsl-run-code......
+g++ gslroot.cpp -o root -lgsl -lgslcblas -lm
+
+...Brew and GSL.......
+
+...installation 
+https://docs.brew.sh/Homebrew-on-Linux
+...
+
+brew install gsl
+
+sudo apt-get update
+sudo apt-get install g++
+sudo apt-get make
+
+
+wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.5.tar.gz
+tar -zxvf gsl-2.5.tar.gz
+cd gsl-2.5
+mkdir /home/yourname/gsl
+./configure --prefix=/home/yourname/gsl
+make
+make check
+make install
+
+......Run Anaconda comand ...........
+
+source ~/.bashrc
+
+.......Ejecutar un .sh..........
+chmod +x job.sh
+./job.sh
+
+
+.......MySQL.........
+
+mysql -u root -p
+
+..........DROPBOX..........
+
+~/.dropbox-dist/dropboxd
+
+
+
